@@ -25,6 +25,9 @@
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>NSAppTransportSecurity</key>
+
+
+	
 	<dict>
 	  <!-- Do not change NSAllowsArbitraryLoads to true, or you will risk app rejection! -->
 		<key>NSAllowsArbitraryLoads</key>
@@ -32,8 +35,16 @@
 		<key>NSAllowsLocalNetworking</key>
 		<true/>
 	</dict>
+	<key>NSBluetoothAlwaysUsageDescription</key>
+<string>This app uses Bluetooth to connect to Stripe Terminal readers.</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
-	<string></string>
+	<string>This app requires location access to discover Stripe Terminal readers via Bluetooth.</string>
+	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+<string>This app uses your location to discover nearby Stripe Terminal devices even in the background.</string>
+
+<!-- Optional: Required if you're using NFC for Tap to Pay -->
+<key>NFCReaderUsageDescription</key>
+<string>This app uses NFC to process contactless payments using Stripe Terminal.</string>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
 	<key>UIRequiredDeviceCapabilities</key>
@@ -41,6 +52,11 @@
 		<string>arm64</string>
 	</array>
 	<key>UISupportedInterfaceOrientations</key>
+	<key>com.apple.developer.nfc.readersession.formats</key>
+<array>
+    <string>NDEF</string>
+</array>
+
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>
 		<string>UIInterfaceOrientationLandscapeLeft</string>
